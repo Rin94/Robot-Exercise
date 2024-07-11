@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-07-11T07:53:26.841519" rpa="false" schemaversion="5">
+<suite id="s1" name="SearchTest" source="/Users/jaredsalinas/PycharmProjects/LiverpoolDemo/tests/SearchTest.robot">
+<test id="s1-t1" name="Scenario 3" line="45">
+<kw name="open liverpool page" owner="Generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:26.951884" level="INFO">Opening browser 'chrome' to base url 'https://www.liverpool.com.mx/tienda/home'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-11T07:53:26.951665" elapsed="19.868949"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-11T07:53:46.821325" elapsed="0.535125"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.356654" elapsed="0.000838"/>
+</kw>
+<status status="PASS" start="2024-07-11T07:53:26.950868" elapsed="20.406741"/>
+</kw>
+<kw name="Searching by category" owner="HomePage">
+<kw name="Wait until Element passed is Located on page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.358383" elapsed="0.055185"/>
+</kw>
+<arg>${category_hamburger_menu_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:47.358184" elapsed="0.055505"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:47.414092" level="INFO">Clicking element 'XPATH://span//i[contains(@class,'hammenu')]'.</msg>
+<arg>${category_hamburger_menu_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.413840" elapsed="0.102571"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-07-11T07:53:47.516866" level="INFO">${category_link_locator} = XPATH:(//li[contains(@class,'category')]//a[contains(@href,'belleza')])[2]</msg>
+<var>${category_link_locator}</var>
+<arg>${category_link_locator}</arg>
+<arg>REPLACE</arg>
+<arg>${category}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.516621" elapsed="0.000272"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-07-11T07:53:47.517141" level="INFO">${sub_category_link_locator} = XPATH://a[contains(text(),'Perfumes Hombre')]</msg>
+<var>${sub_category_link_locator}</var>
+<arg>${sub_category_link_locator}</arg>
+<arg>REPLACE</arg>
+<arg>${subcategory}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.516997" elapsed="0.000164"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:47.517397" level="INFO">Simulating Mouse Over on element 'XPATH:(//li[contains(@class,'category')]//a[contains(@href,'belleza')])[2]'.</msg>
+<arg>${category_link_locator}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.517250" elapsed="2.986189"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:50.503919" level="INFO">Clicking link 'XPATH://a[contains(text(),'Perfumes Hombre')]'.</msg>
+<arg>${sub_category_link_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:50.503660" elapsed="0.141594"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-11T07:53:55.650144" level="INFO">Slept 5 seconds.</msg>
+<arg>5S</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-11T07:53:50.646530" elapsed="5.004085"/>
+</kw>
+<arg>belleza</arg>
+<arg>Perfumes Hombre</arg>
+<arg>Dior</arg>
+<status status="PASS" start="2024-07-11T07:53:47.357849" elapsed="8.293235"/>
+</kw>
+<kw name="Click View More Brands" owner="CatalogPage">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:55.678861" level="INFO">${c} = 1</msg>
+<var>${c}</var>
+<arg>${view_more_brand_locator}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:55.653061" elapsed="0.025866"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:55.679903" level="INFO">Clicking link 'XPATH://a[@id='Marcas']'.</msg>
+<arg>${view_more_brand_locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:55.679674" elapsed="0.166524"/>
+</kw>
+<arg>${c}&gt;0</arg>
+<arg>Click Link</arg>
+<arg>${view_more_brand_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-11T07:53:55.679229" elapsed="0.167063"/>
+</kw>
+<status status="PASS" start="2024-07-11T07:53:55.651896" elapsed="0.194511"/>
+</kw>
+<kw name="Filter By Brand" owner="CatalogPage">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2024-07-11T07:53:55.847063" level="INFO">${brand} = DIOR</msg>
+<var>${brand}</var>
+<arg>${brand}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2024-07-11T07:53:55.846925" elapsed="0.000163"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-07-11T07:53:55.847315" level="INFO">${check_box_brand_locator} = XPATH:(//div[contains(@id,'Marcascount')]//label[contains(text(),'DIOR')]/parent::div//div)[1]</msg>
+<var>${check_box_brand_locator}</var>
+<arg>${check_box_brand_locator}</arg>
+<arg>REPLACE</arg>
+<arg>${brand}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-07-11T07:53:55.847179" elapsed="0.000156"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:55.860449" level="INFO">${checkboxBrand} = &lt;selenium.webdriver.remote.webelement.WebElement (session="9636b5cd998e9820ea3b180259aacf05", element="f.858BA9FE8AD4C34C7AA4A3E98095D314.d.36C57979C7D91AE84F476A567C46A9DF.e.668")&gt;</msg>
+<var>${checkboxBrand}</var>
+<arg>${check_box_brand_locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:55.847422" elapsed="0.013069"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:55.860844" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="9636b5cd998e9820ea3b180259aacf05", element="f.858BA9FE8AD4C34C7AA4A3E98095D314.d.36C57979C7D91AE84F476A567C46A9DF.e.668")&gt;'.</msg>
+<arg>${checkboxBrand}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:55.860637" elapsed="0.188145"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-11T07:53:58.050041" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-11T07:53:56.049232" elapsed="2.001154"/>
+</kw>
+<arg>Dior</arg>
+<status status="PASS" start="2024-07-11T07:53:55.846640" elapsed="2.204116"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-07-11T07:53:58.052121" level="INFO">@{suggestionList} = [ Dior ]</msg>
+<var>@{suggestionList}</var>
+<arg>Dior</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-07-11T07:53:58.051376" elapsed="0.000794"/>
+</kw>
+<kw name="Verify products are in catalog" owner="CatalogPage">
+<kw name="Wait until Element passed is Located on page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T07:53:58.053570" elapsed="0.036371"/>
+</kw>
+<arg>${product_names_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:58.053117" elapsed="0.037195"/>
+</kw>
+<kw name="Check Expected Product Is In Catalog" owner="CatalogPage">
+<msg time="2024-07-11T07:53:58.186896" level="INFO">PERFUMEDIORSAUVAGEPARFUMPARAHOMBRE ---- is in -----Dior
+EAUDETOILETTEDIORSAUVAGEDEHOMBRE ---- is in -----Dior
+EAUDEPARFUMDIORSAUVAGEEAUDEPARFUMPARAHOMBRE ---- is in -----Dior
+PERFUMEDIORSAUVAGEPARAHOMBRE ---- is in -----Dior
+EAUDETOILETTEDIORFAHRENHEITPARAHOMBRE ---- is in -----Dior
+EAUDEPARFUMDIORHOMMEINTENSEPARAHOMBRE ---- is in -----Dior
+LOCIÓNDIORSAUVAGETHETONERPARAHOMBRE ---- is in -----Dior
+EAUDETOILETTEDIORHOMMEPARAHOMBRE ---- is in -----Dior
+EAUDETOILETTEDIORHOMMESPORTPARAHOMBRE ---- is in -----Dior
+COLONIADIORHOMMEPARAHOMBRE ---- is in -----Dior
+EAUDETOILETTEDIORSAUVAGEPARAHOMBRE ---- is in -----Dior
+COLONIADIORDIORHOMME2023PARAHOMBRE ---- is in -----Dior
+LOCIÓNAFTERSHAVEAFEITADODIORHOMME ---- is in -----Dior</msg>
+<msg time="2024-07-11T07:53:58.187012" level="INFO">${match} = True</msg>
+<var>${match}</var>
+<arg>${suggestions}</arg>
+<status status="PASS" start="2024-07-11T07:53:58.090454" elapsed="0.096580"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${match}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-07-11T07:53:58.187185" elapsed="0.000160"/>
+</kw>
+<arg>@{suggestionList}</arg>
+<status status="PASS" start="2024-07-11T07:53:58.052512" elapsed="0.134890"/>
+</kw>
+<kw name="tear down" owner="Generic" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-07-11T07:53:58.187765" elapsed="0.143703"/>
+</kw>
+<status status="PASS" start="2024-07-11T07:53:58.187575" elapsed="0.144084"/>
+</kw>
+<doc>Search a product in the category list and check the products are matched in the catalog.</doc>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-07-11T07:53:26.950300" elapsed="31.381418"/>
+</test>
+<status status="PASS" start="2024-07-11T07:53:26.847223" elapsed="31.485048"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="SearchTest">SearchTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

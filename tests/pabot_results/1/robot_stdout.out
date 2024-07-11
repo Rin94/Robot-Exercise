@@ -1,0 +1,9 @@
+==============================================================================
+SearchTest                                                                    
+==============================================================================
+Scenario 2 :: Search a product by filters (Size, Price, Brand) and... | PASS |
+------------------------------------------------------------------------------
+SearchTest                                                            | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  /Users/jaredsalinas/PycharmProjects/LiverpoolDemo/tests/pabot_results/1/output.xml

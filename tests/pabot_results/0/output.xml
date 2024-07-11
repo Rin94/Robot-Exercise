@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-07-11T07:53:26.841457" rpa="false" schemaversion="5">
+<suite id="s1" name="SearchTest" source="/Users/jaredsalinas/PycharmProjects/LiverpoolDemo/tests/SearchTest.robot">
+<test id="s1-t1" name="Scenario 1" line="21">
+<kw name="open liverpool page" owner="Generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:26.951897" level="INFO">Opening browser 'chrome' to base url 'https://www.liverpool.com.mx/tienda/home'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-11T07:53:26.951681" elapsed="7.062999"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-11T07:53:34.016489" elapsed="1.953262"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-07-11T07:53:35.970422" elapsed="0.002477"/>
+</kw>
+<status status="PASS" start="2024-07-11T07:53:26.950893" elapsed="9.022214"/>
+</kw>
+<kw name="Searching products" owner="HomePage">
+<kw name="Wait until Element passed is Located on page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T07:53:35.976675" elapsed="0.043086"/>
+</kw>
+<arg>${search_bar_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:35.975704" elapsed="0.044301"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:36.021354" level="INFO">Typing text 'play station' into text field 'XPATH:(//input[@id='mainSearchbar'])[1]'.</msg>
+<arg>${search_bar_locator}</arg>
+<arg>${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:36.020456" elapsed="0.583793"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:36.606213" level="INFO">Sending key(s) ('ENTER',) to XPATH:(//input[@id='mainSearchbar'])[1] element.</msg>
+<msg time="2024-07-11T07:53:37.004520" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-07-11T07:53:37.004959" level="INFO">Releasing special key ENTER.</msg>
+<arg>${search_bar_locator}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-07-11T07:53:36.604829" elapsed="0.480261"/>
+</kw>
+<arg>play station</arg>
+<status status="PASS" start="2024-07-11T07:53:35.973518" elapsed="1.113253"/>
+</kw>
+<kw name="Verify products are in catalog" owner="CatalogPage">
+<kw name="Wait until Element passed is Located on page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T07:53:37.094385" elapsed="1.793339"/>
+</kw>
+<arg>${product_names_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:37.092232" elapsed="1.795676"/>
+</kw>
+<kw name="Check Expected Product Is In Catalog" owner="CatalogPage">
+<msg time="2024-07-11T07:53:39.430352" level="INFO">CONSOLAPS5DE1TBEDICIÓNBUNDLE ---- is in -----PS5
+CONSOLAPLAYSTATION5PORTALEDICIÓNESTÁNDARSONYCOMPUTERENTERT ---- is in -----PLAYSTATION
+CONSOLAPLAYSTATION5825GB ---- is in -----PLAYSTATION
+CONSOLAPLAYSTATION4DE1TBEDICIÓNBUNDLECALLOFDUTY ---- is in -----PLAYSTATION
+CONSOLAPS5DE1TBEDICIÓNBUNDLE ---- is in -----PS5
+CONSOLAPS5DE1TBEDICIÓNBUNDLE ---- is in -----PS5
+CONSOLAPLAYSTATION5DE1TBEDICIÓNBUNDLESPIDER-MAN ---- is in -----PLAYSTATION
+CONSOLAPLAYSTATIONDE1TBEDICIÓNBUNDLEGODOFWARRAGNAROK ---- is in -----PLAYSTATION
+EASPORTSFC24PARAPLAYSTATION4FÍSICO ---- is in -----PLAYSTATION
+EASPORTSFC24PARAPLAYSTATION5FÍSICO ---- is in -----PLAYSTATION
+ESTACIÓNDERECARGAPARADUALSENSEPLAYSTATION5BLANCO ---- is in -----PLAYSTATION
+DEADISLAND2EDICIÓNHELL-APARAPLAYSTATION5FÍSICO ---- is in -----PLAYSTATION
+CONTROLINALÁMBRICOPARAPLAYSTATION5EDICIÓNCOSMICRED ---- is in -----PLAYSTATION
+CONTROLALÁMBRICOEINALÁMBRICOPARAPLAYSTATION5 ---- is in -----PLAYSTATION
+GRANDTHEFTAUTOVESTÁNDARPARAPS5FÍSICO ---- is in -----PS5
+CONTROLINALÁMBRICOPARAPLAYSTATION5EDICIÓNMIDNIGHTBLACK ---- is in -----PLAYSTATION
+SETCONTROLSONYINALÁMBRICOPARAPLAYSTATION5EDICIÓNESPECIAL ---- is in -----PLAYSTATION
+CONSOLAPS5SLIMDE1TBEDICIÓNESTÁNDAR ---- is in -----PS5
+CONSOLAPLAYSTATION4SLIMDE500GB ---- is in -----PLAYSTATION
+CONTROLINALÁMBRICOPARAPLAYSTATION5EDICIÓNGALACTICPURPLE ---- is in -----PLAYSTATION
+CUBIERTASPARALACONSOLAPS5 ---- is in -----PS5
+CONSOLAPS5SLIMDE1TBEDICIÓNDIGITAL ---- is in -----PS5
+CONTROLSONYALÁMBRICOEINALÁMBRICOPARAPLAYSTATION5+AUDÍFONOS ---- is in -----PLAYSTATION
+CONTROLALÁMBRICOEINALÁMBRICOPARAPLAYSTATION4 ---- is in -----PLAYSTATION
+DRAGONBALLSPARKINGZEROPARAPS5FÍSICO ---- is in -----PS5
+CONTROLINALÁMBRICOPARAPLAYSTATION5EDICIÓNSTARLIGHTBLUE ---- is in -----PLAYSTATION
+CONTROLPLAYSTATIONINALÁMBRICOPARAPLAYSTATION5 ---- is in -----PLAYSTATION
+AUDÍFONOSPS5INALÁMBRICOSCONCANCELACIÓNDERUIDO ---- is in -----PS5
+CONTROLSTORECLINEINALÁMBRICOPARAPLAYSTATION4EDICIÓNLIMITADA ---- is in -----PLAYSTATION
+LENTESDEREALIDADVIRTUALPLAYSTATIONPARAPS5 ---- is in -----PLAYSTATION
+TESTDRIVEUNLIMITED:SOLARCROWNESTÁNDARPARAPS5FÍSICO ---- is in -----PS5
+CONTROLGAMEPADSONYINALÁMBRICAPARAPLAYSTATION5 ---- is in -----PLAYSTATION
+ESTUCHEPARAPLAYSTATION5BELUG ---- is in -----PLAYSTATION
+MARVEL’SSPIDER-MAN2ESTÁNDARPARAPS5FÍSICO ---- is in -----PS5
+CONTROLGADGETS&amp;FUNALÁMBRICOEINALÁMBRICOPARAPLAYSTATION4 ---- is in -----PLAYSTATION
+TENISPUMARSXPLAYSTATIONPARAHOMBRE ---- is in -----PLAYSTATION
+SIMULADORDECARRERALOGITECHGALÁMBRICOPARAPLAYSTATION4 ---- is in -----PLAYSTATION
+THELASTOFUSPARTIIREMASTEREDPARAPS5FÍSICO ---- is in -----PS5
+GRANDTHEFTAUTOVPREMIUMPARAPS4FÍSICO ---- is in -----PS4
+AUDÍFONOSONEARPLAYSTATIONPULSEELITEINALÁMBRICOSCONCANCELACIÓNDERUIDO ---- is in -----PLAYSTATION
+CONSOLAPLAYSTATION5DE825GBEDICIÓNBUNDLE+AUDÍFONOS ---- is in -----PLAYSTATION
+SILENTHILL2REMAKEESTÁNDARPARAPS5FÍSICO ---- is in -----PS5
+SOPORTEPARACONSOLAFIJOPLAYSTATION ---- is in -----PLAYSTATION
+F124ESTÁNDARPARAPS5FÍSICO ---- is in -----PS5
+CONSOLAPLAYSTATION5DE1TBEDICIÓNBUNDLE+CARGADOR ---- is in -----PLAYSTATION
+CALLOFDUTY:MODERNWARFAREIIIESTÁNDARPARAPS4FÍSICO ---- is in -----PS4
+STRAYEDICIÓNESTÁNDARPARAPLAYSTATION5FÍSICO ---- is in -----PLAYSTATION
+CONTROLALÁMBRICOEINALÁMBRICOPARAPLAYSTATION4EDICIÓNMIDNIGHTBLUE ---- is in -----PLAYSTATION
+UNIDADDEDISCOPARACONSOLAPS5 ---- is in -----PS5
+CARGADORDEPILASBIONIKPARAPS5 ---- is in -----PS5
+VOLANTECONPEDALESHORISPF-004UALÁMBRICOPARAPLAYSTATIONYPC ---- is in -----PLAYSTATION
+THELASTOFUSPARTIPREVENTAPARAPS5FÍSICO ---- is in -----PS5
+CARGADORPARA2CONTROLESDEPS5REDLEMON ---- is in -----PS5
+CONTROLSONYINALÁMBRICOPARAPLAYSTATION4 ---- is in -----PLAYSTATION
+F124ESTÁNDARPARAPS4FÍSICO ---- is in -----PS4
+ASTROBOTESTÁNDARPARAPLAYSTATION5FÍSICO ---- is in -----PLAYSTATION</msg>
+<msg time="2024-07-11T07:53:39.430520" level="INFO">${match} = True</msg>
+<var>${match}</var>
+<arg>${suggestions}</arg>
+<status status="PASS" start="2024-07-11T07:53:38.888094" elapsed="0.542450"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${match}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-07-11T07:53:39.430711" elapsed="0.000167"/>
+</kw>
+<arg>@{suggestions}</arg>
+<status status="PASS" start="2024-07-11T07:53:37.087165" elapsed="2.343772"/>
+</kw>
+<kw name="Get first product name" owner="CatalogPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:39.455949" level="INFO">${productName} = Consola PS5 de 1 TB edición bundle</msg>
+<var>${productName}</var>
+<arg>${product_names_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:39.431337" elapsed="0.024654"/>
+</kw>
+<return>
+<value>${productName}</value>
+<status status="PASS" start="2024-07-11T07:53:39.456288" elapsed="0.000137"/>
+</return>
+<msg time="2024-07-11T07:53:39.456562" level="INFO">${title} = Consola PS5 de 1 TB edición bundle</msg>
+<var>${title}</var>
+<status status="PASS" start="2024-07-11T07:53:39.431105" elapsed="0.025481"/>
+</kw>
+<kw name="Get first product price" owner="CatalogPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:39.481259" level="INFO">${productPrice} = $9,99900</msg>
+<var>${productPrice}</var>
+<arg>${product_price_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:39.456954" elapsed="0.024343"/>
+</kw>
+<kw name="Get Substring" owner="String">
+<msg time="2024-07-11T07:53:39.481711" level="INFO">${productPrice} = $9,999</msg>
+<var>${productPrice}</var>
+<arg>${productPrice}</arg>
+<arg>0</arg>
+<arg>-2</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="PASS" start="2024-07-11T07:53:39.481443" elapsed="0.000291"/>
+</kw>
+<return>
+<value>${productPrice}</value>
+<status status="PASS" start="2024-07-11T07:53:39.481793" elapsed="0.000058"/>
+</return>
+<msg time="2024-07-11T07:53:39.481958" level="INFO">${price} = $9,999</msg>
+<var>${price}</var>
+<status status="PASS" start="2024-07-11T07:53:39.456736" elapsed="0.025241"/>
+</kw>
+<kw name="Click on first product" owner="CatalogPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:39.482471" level="INFO">Clicking element 'XPATH://h5[contains(@class, 'card-title a-card-description')]'.</msg>
+<arg>${product_names_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:39.482295" elapsed="0.107578"/>
+</kw>
+<status status="PASS" start="2024-07-11T07:53:39.482099" elapsed="0.107876"/>
+</kw>
+<kw name="Check product title and price" owner="ProductPage">
+<kw name="Wait until Element passed is Located on page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T07:53:39.590903" elapsed="0.935936"/>
+</kw>
+<arg>${product_title_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:39.590655" elapsed="0.936285"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:40.552048" level="INFO">${actualTitle} = Consola PS5 de 1 TB edición bundle</msg>
+<var>${actualTitle}</var>
+<arg>${product_title_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:40.527058" elapsed="0.025030"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:40.571966" level="INFO">${actualPrice} = $9,999
+00</msg>
+<var>${actualPrice}</var>
+<arg>${product_price_discount_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:40.552234" elapsed="0.019770"/>
+</kw>
+<kw name="Get Substring" owner="String">
+<msg time="2024-07-11T07:53:40.572528" level="INFO">${actualPrice} = $9,999
+</msg>
+<var>${actualPrice}</var>
+<arg>${actualPrice}</arg>
+<arg>0</arg>
+<arg>-2</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="PASS" start="2024-07-11T07:53:40.572151" elapsed="0.000457"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-07-11T07:53:40.573726" level="INFO">${actualPrice} = $9,999</msg>
+<var>${actualPrice}</var>
+<arg>${SPACE}${actualPrice}${SPACE}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-07-11T07:53:40.573042" elapsed="0.000736"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>${actualTitle}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-11T07:53:40.573990" elapsed="0.000374"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${price}</arg>
+<arg>${actualPrice}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-11T07:53:40.574745" elapsed="0.000292"/>
+</kw>
+<arg>${title}</arg>
+<arg>${price}</arg>
+<status status="PASS" start="2024-07-11T07:53:39.590136" elapsed="0.985138"/>
+</kw>
+<kw name="tear down" owner="Generic" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-07-11T07:53:40.575719" elapsed="0.184414"/>
+</kw>
+<status status="PASS" start="2024-07-11T07:53:40.575500" elapsed="0.184739"/>
+</kw>
+<doc>Search a product in the search bar and verifies the product and his synonyms are matched in the product catalog.</doc>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-07-11T07:53:26.950309" elapsed="13.809981"/>
+</test>
+<status status="PASS" start="2024-07-11T07:53:26.847129" elapsed="13.913625"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="SearchTest">SearchTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

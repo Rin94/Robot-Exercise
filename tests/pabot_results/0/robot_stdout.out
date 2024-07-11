@@ -1,0 +1,9 @@
+==============================================================================
+SearchTest                                                                    
+==============================================================================
+Scenario 1 :: Search a product in the search bar and verifies the ... | PASS |
+------------------------------------------------------------------------------
+SearchTest                                                            | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  /Users/jaredsalinas/PycharmProjects/LiverpoolDemo/tests/pabot_results/0/output.xml

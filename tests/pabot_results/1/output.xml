@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-07-11T07:53:26.841326" rpa="false" schemaversion="5">
+<suite id="s1" name="SearchTest" source="/Users/jaredsalinas/PycharmProjects/LiverpoolDemo/tests/SearchTest.robot">
+<test id="s1-t1" name="Scenario 2" line="31">
+<kw name="open liverpool page" owner="Generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:26.951888" level="INFO">Opening browser 'chrome' to base url 'https://www.liverpool.com.mx/tienda/home'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-11T07:53:26.951672" elapsed="9.862608"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-11T07:53:36.816121" elapsed="0.523394"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-07-11T07:53:37.341061" elapsed="0.001688"/>
+</kw>
+<status status="PASS" start="2024-07-11T07:53:26.950883" elapsed="10.392332"/>
+</kw>
+<kw name="Searching products" owner="HomePage">
+<kw name="Wait until Element passed is Located on page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T07:53:37.345627" elapsed="0.050041"/>
+</kw>
+<arg>${search_bar_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:37.345014" elapsed="0.051049"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:37.397499" level="INFO">Typing text 'smart tv' into text field 'XPATH:(//input[@id='mainSearchbar'])[1]'.</msg>
+<arg>${search_bar_locator}</arg>
+<arg>${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:37.396863" elapsed="0.493608"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:37.892540" level="INFO">Sending key(s) ('ENTER',) to XPATH:(//input[@id='mainSearchbar'])[1] element.</msg>
+<msg time="2024-07-11T07:53:41.266629" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-07-11T07:53:41.266734" level="INFO">Releasing special key ENTER.</msg>
+<arg>${search_bar_locator}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-07-11T07:53:37.891457" elapsed="3.422470"/>
+</kw>
+<arg>smart tv</arg>
+<status status="PASS" start="2024-07-11T07:53:37.344210" elapsed="3.969948"/>
+</kw>
+<kw name="Filter By Size" owner="CatalogPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:41.315466" level="INFO">Clicking element 'XPATH://a[@id='Tamao']'.</msg>
+<arg>${view_more_size_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:41.315229" elapsed="1.756066"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-07-11T07:53:43.071798" level="INFO">${check_box_size_locator} = XPATH:(//div[contains(@id,'Tamaocount')]//label[contains(text(),'55')]/parent::div//div)[1]</msg>
+<var>${check_box_size_locator}</var>
+<arg>${check_box_size_locator}</arg>
+<arg>REPLACE</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-07-11T07:53:43.071511" elapsed="0.000320"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:43.100396" level="INFO">${checkboxSize} = &lt;selenium.webdriver.remote.webelement.WebElement (session="672c2447553a59f9f576ffae28329ee2", element="f.2EDD6C770D08CC1C36FC1DC2DDA7CFBD.d.0409272CF14FDAEAF7FA40A7EE2381E9.e.443")&gt;</msg>
+<var>${checkboxSize}</var>
+<arg>${check_box_size_locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:43.071967" elapsed="0.028501"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:43.100930" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="672c2447553a59f9f576ffae28329ee2", element="f.2EDD6C770D08CC1C36FC1DC2DDA7CFBD.d.0409272CF14FDAEAF7FA40A7EE2381E9.e.443")&gt;'.</msg>
+<arg>${checkboxSize}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:43.100684" elapsed="0.267728"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-11T07:53:45.370031" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-11T07:53:43.368584" elapsed="2.001619"/>
+</kw>
+<arg>${screen_size}</arg>
+<status status="PASS" start="2024-07-11T07:53:41.314340" elapsed="4.056034"/>
+</kw>
+<kw name="Filter By Price" owner="CatalogPage">
+<kw name="Replace String" owner="String">
+<msg time="2024-07-11T07:53:45.371436" level="INFO">${radio_button_price_locator} = XPATH://div[contains(@class,'fiterl-prices')]//input[contains(@id,'sortPrice-10000')]</msg>
+<var>${radio_button_price_locator}</var>
+<arg>${radio_button_price_locator}</arg>
+<arg>REPLACE</arg>
+<arg>${price}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-07-11T07:53:45.371152" elapsed="0.000326"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:45.393507" level="INFO">${radio_button_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="672c2447553a59f9f576ffae28329ee2", element="f.2EDD6C770D08CC1C36FC1DC2DDA7CFBD.d.0409272CF14FDAEAF7FA40A7EE2381E9.e.502")&gt;</msg>
+<var>${radio_button_element}</var>
+<arg>${radio_button_price_locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:45.371677" elapsed="0.021879"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:45.393979" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="672c2447553a59f9f576ffae28329ee2", element="f.2EDD6C770D08CC1C36FC1DC2DDA7CFBD.d.0409272CF14FDAEAF7FA40A7EE2381E9.e.502")&gt;'.</msg>
+<arg>${radio_button_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:45.393739" elapsed="0.148374"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-11T07:53:47.544305" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-11T07:53:45.542273" elapsed="2.002166"/>
+</kw>
+<arg>${filter_price}</arg>
+<status status="PASS" start="2024-07-11T07:53:45.370653" elapsed="2.173906"/>
+</kw>
+<kw name="Filter By Brand" owner="CatalogPage">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2024-07-11T07:53:47.545126" level="INFO">${brand} = SONY</msg>
+<var>${brand}</var>
+<arg>${brand}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.545009" elapsed="0.000137"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-07-11T07:53:47.545358" level="INFO">${check_box_brand_locator} = XPATH:(//div[contains(@id,'Marcascount')]//label[contains(text(),'SONY')]/parent::div//div)[1]</msg>
+<var>${check_box_brand_locator}</var>
+<arg>${check_box_brand_locator}</arg>
+<arg>REPLACE</arg>
+<arg>${brand}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.545230" elapsed="0.000149"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:47.558484" level="INFO">${checkboxBrand} = &lt;selenium.webdriver.remote.webelement.WebElement (session="672c2447553a59f9f576ffae28329ee2", element="f.2EDD6C770D08CC1C36FC1DC2DDA7CFBD.d.0409272CF14FDAEAF7FA40A7EE2381E9.e.634")&gt;</msg>
+<var>${checkboxBrand}</var>
+<arg>${check_box_brand_locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.545462" elapsed="0.013225"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T07:53:47.559041" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="672c2447553a59f9f576ffae28329ee2", element="f.2EDD6C770D08CC1C36FC1DC2DDA7CFBD.d.0409272CF14FDAEAF7FA40A7EE2381E9.e.634")&gt;'.</msg>
+<arg>${checkboxBrand}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.558846" elapsed="0.131440"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-11T07:53:49.691715" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-11T07:53:47.690782" elapsed="2.001332"/>
+</kw>
+<arg>${brandSuggestion}[0]</arg>
+<status status="PASS" start="2024-07-11T07:53:47.544719" elapsed="2.147684"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-07-11T07:53:49.693840" level="INFO">@{sizeList} = [ 55 ]</msg>
+<var>@{sizeList}</var>
+<arg>${screen_size}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.692954" elapsed="0.000944"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-07-11T07:53:49.694575" level="INFO">@{priceList} = [ 10000 ]</msg>
+<var>@{priceList}</var>
+<arg>${filter_price}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.694188" elapsed="0.000444"/>
+</kw>
+<kw name="Verify products are in catalog" owner="CatalogPage">
+<kw name="Wait until Element passed is Located on page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.696246" elapsed="0.037556"/>
+</kw>
+<arg>${product_names_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.695712" elapsed="0.038214"/>
+</kw>
+<kw name="Check Expected Product Is In Catalog" owner="CatalogPage">
+<msg time="2024-07-11T07:53:49.768480" level="INFO">PANTALLASONYLCDSMARTTVDE55PULGADAS4KKD-55X77LCONGOOGLETV ---- is in -----55
+PANTALLASONYLCDDE55PULGADAS4KUHDBRAVIA3CONGOOGLETV ---- is in -----55
+PANTALLASONYLCDSMARTTVDE55PULGADAS4KXR-55X90LCONGOOGLETV ---- is in -----55</msg>
+<msg time="2024-07-11T07:53:49.768592" level="INFO">${match} = True</msg>
+<var>${match}</var>
+<arg>${suggestions}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.734063" elapsed="0.034551"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${match}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.768764" elapsed="0.000158"/>
+</kw>
+<arg>@{sizeList}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.695157" elapsed="0.073822"/>
+</kw>
+<kw name="Verify Price in catalog" owner="CatalogPage">
+<kw name="Check Price In Product Catalog Is More Than Expected Filter" owner="CatalogPage">
+<msg time="2024-07-11T07:53:49.802468" level="INFO">12249.0 is greater than 10000.0
+13509.0 is greater than 10000.0
+23099.0 is greater than 10000.0</msg>
+<msg time="2024-07-11T07:53:49.802567" level="INFO">${match} = True</msg>
+<var>${match}</var>
+<arg>${price}</arg>
+<arg>${product_price_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.769300" elapsed="0.033289"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${match}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.802728" elapsed="0.000159"/>
+</kw>
+<arg>${filter_price}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.769094" elapsed="0.033847"/>
+</kw>
+<kw name="Verify products are in catalog" owner="CatalogPage">
+<kw name="Wait until Element passed is Located on page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.803447" elapsed="0.013992"/>
+</kw>
+<arg>${product_names_locator}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.803278" elapsed="0.014244"/>
+</kw>
+<kw name="Check Expected Product Is In Catalog" owner="CatalogPage">
+<msg time="2024-07-11T07:53:49.843126" level="INFO">PANTALLASONYLCDSMARTTVDE55PULGADAS4KKD-55X77LCONGOOGLETV ---- is in -----SONY
+PANTALLASONYLCDDE55PULGADAS4KUHDBRAVIA3CONGOOGLETV ---- is in -----SONY
+PANTALLASONYLCDSMARTTVDE55PULGADAS4KXR-55X90LCONGOOGLETV ---- is in -----SONY</msg>
+<msg time="2024-07-11T07:53:49.843219" level="INFO">${match} = True</msg>
+<var>${match}</var>
+<arg>${suggestions}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.817624" elapsed="0.025616"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${match}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.843372" elapsed="0.000152"/>
+</kw>
+<arg>${brandSuggestion}[0]</arg>
+<status status="PASS" start="2024-07-11T07:53:49.803058" elapsed="0.040520"/>
+</kw>
+<kw name="Verify Counting list in catalog" owner="CatalogPage">
+<kw name="Check Count Results In Catalog" owner="CatalogPage">
+<msg time="2024-07-11T07:53:49.850327" level="INFO">${match} = True</msg>
+<var>${match}</var>
+<arg>${count}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.843892" elapsed="0.006462"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${match}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.850455" elapsed="0.000120"/>
+</kw>
+<arg>${expected_counting_list}</arg>
+<status status="PASS" start="2024-07-11T07:53:49.843695" elapsed="0.006930"/>
+</kw>
+<kw name="tear down" owner="Generic" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-07-11T07:53:49.850953" elapsed="0.170346"/>
+</kw>
+<status status="PASS" start="2024-07-11T07:53:49.850783" elapsed="0.170650"/>
+</kw>
+<doc>Search a product by filters (Size, Price, Brand) and check the expected number of products in the catalog.</doc>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-07-11T07:53:26.950305" elapsed="23.071221"/>
+</test>
+<status status="PASS" start="2024-07-11T07:53:26.847179" elapsed="23.174927"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="SearchTest">SearchTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
